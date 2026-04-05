@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/cart.css" />
+    <title>Duda's Lingerie | Carrinho</title>
+  </head>
+  <body class="page-cart force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link" href="/index.html">Início</a>
+          <a class="shell-nav-link" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link active" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container cart-main">
+      <section class="cart-layout">
+        <article class="cart-items-panel" data-reveal data-reveal-delay="70">
+          <div class="section-head">
+            <h1>Seu carrinho</h1>
+            <a href="/products.html">Continuar comprando</a>
+          </div>
+
+          <p id="cart-status" class="status-line">Carregando itens...</p>
+          <div id="cart-items-list" class="cart-items-list"></div>
+        </article>
+
+        <aside class="cart-summary-panel" data-reveal data-reveal-delay="170">
+          <h2>Resumo do pedido</h2>
+          <p>Subtotal <span id="cart-subtotal">R$ 0,00</span></p>
+          <p>Retirada <span id="cart-shipping">Na loja</span></p>
+          <p class="total-row">Total <span id="cart-total">R$ 0,00</span></p>
+          <button id="checkout-button" type="button" class="btn-primary">Finalizar e combinar retirada</button>
+          <p class="small-note">Retirada em loja. Se desejar entrega, ela deve ser combinada com a loja antes.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/cart.js"></script>
+  </body>
+</html>

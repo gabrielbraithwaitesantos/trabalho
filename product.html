@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/product.css" />
+    <title>Duda's Lingerie | Produto</title>
+  </head>
+  <body class="page-product force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link" href="/index.html">Início</a>
+          <a class="shell-nav-link active" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container product-main">
+      <section class="product-page" data-reveal data-reveal-delay="80">
+        <a class="product-back" href="/products.html">Voltar para produtos</a>
+        <p id="product-status" class="status-line">Carregando informações do produto...</p>
+
+        <article id="product-layout" class="product-layout" hidden>
+          <figure class="product-figure">
+            <img
+              id="product-image"
+              src=""
+              alt=""
+              loading="lazy"
+              width="960"
+              height="1200"
+            />
+          </figure>
+
+          <div class="product-content">
+            <p id="product-category" class="product-category"></p>
+            <h1 id="product-name" class="product-title"></h1>
+            <div class="product-pricing">
+              <p id="product-price" class="product-price"></p>
+              <p id="product-old-price" class="product-old-price" hidden></p>
+            </div>
+            <p id="product-description" class="product-description"></p>
+
+            <div class="product-size-block">
+              <p class="product-block-title">Tamanhos disponíveis</p>
+              <div id="product-sizes" class="product-sizes" role="listbox" aria-label="Seleção de tamanho"></div>
+              <p id="product-size-help" class="product-size-help">Selecione um tamanho para continuar.</p>
+            </div>
+
+            <div class="product-color-block">
+              <p class="product-block-title">Cores disponíveis</p>
+              <div id="product-colors" class="product-colors" role="listbox" aria-label="Seleção de cor"></div>
+              <p id="product-color-help" class="product-size-help">Selecione uma cor para continuar.</p>
+            </div>
+
+            <div class="product-meta">
+              <p>
+                <strong>Avaliação:</strong>
+                <span id="product-rating">-</span>
+              </p>
+              <p>
+                <strong>Destaque:</strong>
+                <span id="product-badge">Seleção especial da loja</span>
+              </p>
+              <p>
+                <strong>Código:</strong>
+                <span id="product-sku">-</span>
+              </p>
+              <p>
+                <strong>Disponibilidade:</strong>
+                <span id="product-availability">Em estoque</span>
+              </p>
+            </div>
+
+            <form id="product-form" class="product-actions">
+              <label class="qty-field" for="product-qty">
+                Quantidade
+                <div class="qty-input-wrap">
+                  <input
+                    id="product-qty"
+                    type="number"
+                    min="1"
+                    max="20"
+                    step="1"
+                    value="1"
+                    inputmode="numeric"
+                  />
+                  <div class="qty-stepper" role="group" aria-label="Ajustar quantidade">
+                    <button
+                      type="button"
+                      class="qty-step qty-step-up"
+                      data-qty-step="increase"
+                      aria-label="Aumentar quantidade"
+                    >
+                      <span class="qty-step-icon qty-step-icon-up" aria-hidden="true"></span>
+                    </button>
+                    <button
+                      type="button"
+                      class="qty-step qty-step-down"
+                      data-qty-step="decrease"
+                      aria-label="Diminuir quantidade"
+                    >
+                      <span class="qty-step-icon qty-step-icon-down" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+              <button class="btn-add" type="submit">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </article>
+
+        <section id="product-details" class="product-details" hidden>
+          <article class="product-detail-card">
+            <h2>Descrição completa</h2>
+            <p id="product-long-description"></p>
+          </article>
+
+          <article class="product-detail-card">
+            <h2>Composição</h2>
+            <p id="product-material"></p>
+          </article>
+
+          <article class="product-detail-card product-detail-card--wide">
+            <h2>Cuidados com a peça</h2>
+            <ul id="product-care-list" class="product-care-list"></ul>
+          </article>
+        </section>
+
+        <article id="product-empty" class="product-empty" hidden>
+          <h1>Produto não encontrado</h1>
+          <p>
+            Não conseguimos localizar este item. Explore nosso catálogo para encontrar outras opções.
+          </p>
+          <a class="btn-empty" href="/products.html">Ver catálogo</a>
+        </article>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/product.js"></script>
+  </body>
+</html>

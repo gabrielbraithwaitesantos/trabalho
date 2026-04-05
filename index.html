@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/home.css" />
+    <title>Duda's Lingerie | Início</title>
+  </head>
+  <body class="page-home force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link active" href="/index.html">Início</a>
+          <a class="shell-nav-link" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container">
+      <section id="home-hero-carousel" class="home-hero-carousel" data-reveal data-reveal-delay="40">
+        <div class="hero-carousel-viewport">
+          <div class="hero-carousel-track" data-carousel-track>
+            <article class="hero-slide hero-slide--essentials is-active" data-carousel-slide>
+              <a class="hero-slide-media" href="/products.html" aria-label="Ver detalhes de produto em destaque">
+                <div class="hero-media-fallback">
+                  <span>Destaque da loja</span>
+                </div>
+                <span class="hero-media-chip">Mais vendido</span>
+                <div class="hero-media-price">
+                  <span class="hero-media-price-label">Preço especial</span>
+                  <div class="hero-media-price-row">
+                    <strong>Carregando...</strong>
+                  </div>
+                </div>
+              </a>
+              <div class="hero-slide-content">
+                <p class="eyebrow">Destaques da loja</p>
+                <h2>Sua proxima calcinha comeca aqui</h2>
+                <p>
+                  Carregando ofertas para mostrar calcinhas reais do catalogo com preco e atalho de compra.
+                </p>
+                <div class="hero-slide-meta">
+                  <span>Retirada na loja</span>
+                  <span>6x sem juros</span>
+                  <span>Entrega sob combinacao</span>
+                </div>
+                <div class="hero-cta-row">
+                  <a class="btn-primary" href="/products.html">Comprar agora</a>
+                  <a class="btn-ghost" href="/products.html">Ver vitrine completa</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-carousel-controls" aria-label="Controles do carrossel">
+          <button class="hero-carousel-nav prev" type="button" data-carousel-prev aria-label="Slide anterior">
+            &#8249;
+          </button>
+
+          <div class="hero-carousel-dots" role="tablist" aria-label="Navegação do carrossel" data-carousel-dots>
+            <button type="button" class="is-active" data-slide-to="0" aria-label="Banner 1" aria-selected="true"></button>
+          </div>
+
+          <button class="hero-carousel-nav next" type="button" data-carousel-next aria-label="Próximo slide">
+            &#8250;
+          </button>
+        </div>
+
+        <div class="home-trust-strip">
+          <p>Retirada nas lojas do Centro</p>
+          <p>Entrega apenas com combinacao previa</p>
+          <p>Atendimento personalizado</p>
+        </div>
+      </section>
+
+      <section class="home-journey" data-reveal data-reveal-delay="120">
+        <div class="section-head">
+          <h2>Como funciona sua compra</h2>
+          <a href="/products.html">Ir para catálogo</a>
+        </div>
+        <div class="journey-grid">
+          <article>
+            <span>1</span>
+            <h3>Escolha sua calcinha ideal</h3>
+            <p>Modelos basicos, sem costura e com renda, organizados para facilitar sua busca.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Filtre do seu jeito</h3>
+            <p>Use busca, faixa de preço e ordenação para chegar à peça ideal.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Finalize no carrinho</h3>
+            <p>Ajuste quantidades e conclua com uma visão clara do pedido.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-categories" data-reveal data-reveal-delay="200">
+        <h2>Comece pelo seu objetivo</h2>
+        <p>Atalhos para entrar direto no tipo de calcinha que voce procura.</p>
+        <div class="quick-category-grid">
+          <a href="/products.html?category=Calcinhas">
+            <strong>Basicas do dia a dia</strong>
+            <span>Conforto e ajuste para uso continuo</span>
+          </a>
+          <a href="/products.html?category=Calcinhas">
+            <strong>Sem costura</strong>
+            <span>Acabamento discreto para looks leves</span>
+          </a>
+          <a href="/products.html?category=Calcinhas">
+            <strong>Renda premium</strong>
+            <span>Detalhes elegantes com toque macio</span>
+          </a>
+          <a href="/products.html?category=Calcinhas">
+            <strong>Kits economicos</strong>
+            <span>Mais unidades com melhor custo-beneficio</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="home-products-section" data-reveal data-reveal-delay="280">
+        <div class="section-head">
+          <h2>Destaques para começar agora</h2>
+          <a href="/products.html">Ver catálogo completo</a>
+        </div>
+        <p id="home-catalog-status" class="status-line">Carregando seleção...</p>
+        <div id="home-product-grid" class="product-grid"></div>
+      </section>
+
+      <section class="home-highlights" data-reveal data-reveal-delay="360">
+        <article>
+          <h3>Dúvidas de tamanho?</h3>
+          <p>Nosso atendimento ajuda você a escolher o ajuste ideal.</p>
+        </article>
+        <article>
+          <h3>Compra sem pressa</h3>
+          <p>Navegação clara para você entender tudo antes de fechar o pedido.</p>
+        </article>
+        <article>
+          <h3>Retirada organizada</h3>
+          <p>Pedido pronto para retirada na loja e entrega somente com combinacao previa.</p>
+        </article>
+      </section>
+
+      <section class="home-stores" data-reveal data-reveal-delay="440">
+        <div class="section-head">
+          <h2>Nossas lojas físicas em Curitiba</h2>
+          <a href="/products.html">Comprar online</a>
+        </div>
+        <p class="home-stores-intro">
+          Atendimento presencial com retirada em loja. Entrega apenas com combinacao previa.
+        </p>
+
+        <div class="home-stores-grid">
+          <article class="store-card">
+            <p class="eyebrow">Loja Centro 1</p>
+            <h3>Rua Voluntários da Pátria, 66</h3>
+            <p>Centro, Curitiba - PR</p>
+            <a
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Voluntarios+da+Patria+66+Centro+Curitiba"
+            >
+              Abrir no Google Maps
+            </a>
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Rua+Voluntarios+da+Patria+66,+Curitiba&output=embed"
+              title="Mapa loja Rua Voluntários da Pátria"
+            ></iframe>
+          </article>
+
+          <article class="store-card">
+            <p class="eyebrow">Loja Centro 2</p>
+            <h3>Rua João Negrão, 309</h3>
+            <p>Centro, Curitiba - PR</p>
+            <a
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Joao+Negrao+309+Centro+Curitiba"
+            >
+              Abrir no Google Maps
+            </a>
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Rua+Joao+Negrao+309,+Curitiba&output=embed"
+              title="Mapa loja Rua João Negrão"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section
+      id="home-splash"
+      class="home-splash"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Abertura da loja"
+      aria-hidden="true"
+    >
+      <button
+        type="button"
+        class="home-splash-backdrop"
+        data-splash-dismiss
+        aria-label="Fechar tela inicial"
+      ></button>
+      <article class="home-splash-panel">
+        <div class="home-splash-brand">
+          <img data-brand-logo class="home-splash-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="home-splash-logo-fallback">
+            <span>Duda's</span>
+            <span>Lingerie</span>
+          </div>
+          <p class="home-splash-brand-note">Moda íntima em Curitiba</p>
+        </div>
+        <h2>Sua experiência premium começa aqui.</h2>
+        <p class="home-splash-description">Conforto, elegância e peças pensadas para o seu estilo.</p>
+        <div class="home-splash-actions">
+          <button type="button" class="btn-primary" data-splash-start>Entrar na loja</button>
+          <a class="btn-ghost" href="/products.html" data-splash-link>Ir direto para produtos</a>
+        </div>
+        <button type="button" class="home-splash-dismiss" data-splash-dismiss>Pular abertura</button>
+      </article>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/login.css" />
+    <title>Duda's Lingerie | Login</title>
+  </head>
+  <body class="page-login force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link" href="/index.html">Início</a>
+          <a class="shell-nav-link" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link active" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container login-main">
+      <section class="login-layout">
+        <article class="login-info-card" data-reveal data-reveal-delay="70">
+          <p class="eyebrow">Área do cliente</p>
+          <h1>Entre para acompanhar pedidos e favoritos</h1>
+          <p>
+            Experiência de conta inspirada em grandes lojas, com histórico de compras, carrinho
+            sincronizado e acesso rápido ao checkout.
+          </p>
+          <ul>
+            <li>Acesso ao status do pedido</li>
+            <li>Gerenciamento de retirada e entrega combinada</li>
+            <li>Ofertas exclusivas do Clube Duda's</li>
+          </ul>
+        </article>
+
+        <article class="login-form-card" data-reveal data-reveal-delay="160">
+          <div id="logged-user-panel" class="logged-user-panel is-hidden">
+            <h2>Você já está logada</h2>
+            <p id="logged-user-text"></p>
+            <div class="login-actions-row">
+              <a href="/products.html" class="btn-primary">Ir para produtos</a>
+              <button id="logout-button" type="button" class="btn-ghost">Sair da conta</button>
+            </div>
+          </div>
+
+          <form id="login-form" class="login-form" novalidate>
+            <h2>Entrar</h2>
+
+            <div class="auth-mode-switch" role="tablist" aria-label="Tipo de acesso">
+              <button
+                id="auth-mode-signin"
+                type="button"
+                class="chip active"
+                aria-selected="true"
+              >
+                Entrar
+              </button>
+              <button
+                id="auth-mode-signup"
+                type="button"
+                class="chip"
+                aria-selected="false"
+              >
+                Criar conta
+              </button>
+            </div>
+
+            <p id="login-mode-helper" class="status-line login-mode-helper">
+              Entre com e-mail e senha da sua conta.
+            </p>
+
+            <div id="login-name-field" class="login-field is-hidden">
+              <label for="login-name">Nome</label>
+              <input id="login-name" name="name" type="text" autocomplete="name" />
+            </div>
+
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" required />
+
+            <label for="login-password">Senha</label>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            />
+
+            <button id="login-submit-button" type="submit" class="btn-primary">Entrar na conta</button>
+            <button id="google-login-button" type="button" class="btn-ghost">
+              Entrar com Google
+            </button>
+            <p id="login-feedback" class="status-line"></p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/login.js"></script>
+  </body>
+</html>

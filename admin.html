@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/admin.css" />
+    <title>Duda's Lingerie | Admin</title>
+  </head>
+  <body class="page-admin force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link" href="/index.html">Início</a>
+          <a class="shell-nav-link" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link active is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container admin-main">
+      <section class="admin-hero" data-reveal data-reveal-delay="40">
+        <p class="eyebrow">Área administrativa</p>
+        <h1>Gestão de catálogo</h1>
+        <p>Somente contas com permissão de administração podem cadastrar novos produtos.</p>
+      </section>
+
+      <section class="admin-access-card" data-reveal data-reveal-delay="120">
+        <h2 id="admin-guard-title">Verificando acesso...</h2>
+        <p id="admin-guard-description" class="status-line">Aguarde a validação da conta conectada.</p>
+        <div class="admin-access-actions">
+          <a id="admin-login-link" href="/login.html" class="btn-ghost is-hidden">Ir para login</a>
+          <a id="admin-products-link" href="/products.html" class="btn-ghost is-hidden">Voltar para produtos</a>
+        </div>
+      </section>
+
+      <section id="admin-form-section" class="admin-form-section is-hidden" data-reveal data-reveal-delay="200">
+        <h2>Cadastrar novo produto</h2>
+        <p id="admin-form-feedback" class="status-line">Preencha os dados para adicionar um item no Firestore.</p>
+
+        <form id="admin-product-form" class="admin-product-form" novalidate>
+          <div class="admin-form-grid">
+            <label>
+              Nome do produto
+              <input name="title" type="text" required />
+            </label>
+
+            <label>
+              Categoria
+              <input name="category" type="text" value="Calcinhas" readonly required />
+            </label>
+
+            <label>
+              Preço
+              <input name="price" type="number" step="0.01" min="0" required />
+            </label>
+
+            <label>
+              Preço antigo (opcional)
+              <input name="oldPrice" type="number" step="0.01" min="0" />
+            </label>
+
+            <label>
+              Avaliação (0 a 5)
+              <input name="rating" type="number" step="0.1" min="0" max="5" value="4.8" />
+            </label>
+
+            <label>
+              Badge (opcional)
+              <input name="badge" type="text" placeholder="Mais vendido" />
+            </label>
+
+            <label>
+              Quantidade em estoque
+              <input name="stock" type="number" min="0" step="1" value="12" />
+            </label>
+
+            <label class="admin-full-field">
+              Cores disponíveis (separadas por vírgula)
+              <input name="colors" type="text" placeholder="Preto, Nude, Vinho" />
+            </label>
+
+            <label class="admin-image-field">
+              URL da imagem (opcional)
+              <input name="image" type="url" placeholder="https://..." />
+            </label>
+          </div>
+
+          <div class="admin-form-actions">
+            <button id="admin-product-submit" type="submit" class="btn-primary">Adicionar produto</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="admin-latest-section" class="admin-latest-section is-hidden" data-reveal data-reveal-delay="280">
+        <h2>Produtos recentes</h2>
+        <p id="admin-latest-status" class="status-line">Carregando itens...</p>
+        <div id="admin-latest-grid" class="admin-latest-grid"></div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/admin.js"></script>
+  </body>
+</html>

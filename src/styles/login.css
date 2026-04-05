@@ -1,0 +1,158 @@
+.login-main {
+  display: grid;
+}
+
+.login-layout {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 480px);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.login-info-card,
+.login-form-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #2a2b33 0%, #21222a 100%);
+  padding: 18px;
+}
+
+.login-info-card h1 {
+  margin-top: 10px;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+}
+
+.login-info-card p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.login-info-card ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.login-info-card li {
+  color: var(--muted);
+  position: relative;
+  padding-left: 16px;
+}
+
+.login-info-card li::before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  color: var(--gold-soft);
+}
+
+.login-form h2,
+.logged-user-panel h2 {
+  font-size: 1.9rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-mode-switch {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.auth-mode-switch .chip {
+  min-width: 116px;
+}
+
+.auth-mode-switch .chip.active {
+  border-color: transparent;
+  background: linear-gradient(120deg, #edc98d 0%, #c88954 100%);
+  color: #20150f;
+  box-shadow: 0 6px 14px #b67c4f55;
+}
+
+.login-mode-helper {
+  margin-top: -2px;
+}
+
+.login-field {
+  display: grid;
+  gap: 8px;
+}
+
+.login-form label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.login-form input {
+  border: 1px solid #ffffff2b;
+  border-radius: 10px;
+  background: #ffffff07;
+  color: var(--text);
+  padding: 10px 12px;
+}
+
+.login-form input:focus {
+  outline: 2px solid #d4a86166;
+  outline-offset: 1px;
+}
+
+#google-login-button {
+  width: fit-content;
+}
+
+#google-login-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.logged-user-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.logged-user-panel p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.login-actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .login-actions-row {
+    flex-direction: column;
+  }
+
+  .auth-mode-switch {
+    flex-direction: column;
+  }
+
+  .auth-mode-switch .chip,
+  #google-login-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-actions-row .btn-primary,
+  .login-actions-row .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}

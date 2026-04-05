@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        if (window.sessionStorage.getItem("dudas:route-transition") === "1") {
+          document.documentElement.classList.add("route-transition-prep");
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("route-transition-prep");
+          }, 1400);
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/products.css" />
+    <title>Duda's Lingerie | Produtos</title>
+  </head>
+  <body class="page-products force-motion">
+    <div class="shell-top-line">Retirada em loja | Entrega somente com combinacao previa</div>
+    <header id="site-header">
+      <div class="shell-header-main page-container">
+        <a href="/index.html" class="shell-brand" aria-label="Duda's Lingerie">
+          <img data-brand-logo class="shell-brand-logo is-hidden" alt="Logo Duda's Lingerie" />
+          <div data-logo-fallback class="shell-brand-fallback">
+            <p>Duda's</p>
+            <p>Lingerie</p>
+          </div>
+        </a>
+
+        <nav class="shell-nav" aria-label="Navegação principal">
+          <a class="shell-nav-link" href="/index.html">Início</a>
+          <a class="shell-nav-link active" href="/products.html">Produtos</a>
+          <a id="shell-admin-link" class="shell-nav-link is-hidden" href="/admin.html">Admin</a>
+          <a class="shell-nav-link" href="/cart.html">Carrinho</a>
+          <a class="shell-nav-link" href="/login.html">Conta</a>
+        </nav>
+
+        <div class="shell-actions">
+          <a id="shell-account-link" class="shell-action-link" href="/login.html">Entrar</a>
+          <button id="shell-logout-button" class="shell-logout-button is-hidden" type="button">Sair</button>
+          <a class="shell-action-link shell-cart-link" href="/cart.html">
+            Carrinho <span id="shell-cart-count" class="shell-cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container products-main">
+      <section class="products-hero" data-reveal data-reveal-delay="40">
+        <p class="eyebrow">Colecao de calcinhas</p>
+        <h1>Encontre a calcinha ideal para o seu dia a dia</h1>
+        <p>Use filtros, busca e ordenacao para comparar modelos e escolher com seguranca.</p>
+      </section>
+
+      <section class="products-controls" data-reveal data-reveal-delay="120">
+        <div class="products-search-wrap">
+          <label for="products-search">Buscar produto</label>
+          <input id="products-search" type="search" placeholder="Ex: calcinha renda, sem costura" />
+        </div>
+
+        <div class="products-sort-wrap">
+          <label for="products-sort">Ordenar</label>
+          <select id="products-sort">
+            <option value="destaques">Destaques</option>
+            <option value="menor-preco">Menor preço</option>
+            <option value="maior-preco">Maior preço</option>
+            <option value="avaliacao">Melhor avaliação</option>
+            <option value="novidades">Novidades</option>
+            <option value="maior-desconto">Maior desconto</option>
+            <option value="nome-az">Nome (A-Z)</option>
+            <option value="nome-za">Nome (Z-A)</option>
+          </select>
+        </div>
+
+        <div class="products-price-wrap">
+          <label for="products-price-range">Faixa de preço</label>
+          <select id="products-price-range">
+            <option value="todas">Todas as faixas</option>
+            <option value="ate-99">Até R$ 99</option>
+            <option value="100-199">R$ 100 a R$ 199</option>
+            <option value="200-299">R$ 200 a R$ 299</option>
+            <option value="300-plus">Acima de R$ 300</option>
+          </select>
+        </div>
+
+        <div class="products-badge-wrap">
+          <label for="products-badge-filter">Etiquetas</label>
+          <select id="products-badge-filter">
+            <option value="todos">Todas</option>
+            <option value="promocao">Promoções</option>
+            <option value="novo">Novidades</option>
+            <option value="mais-vendido">Mais vendidos</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="products-filters" data-reveal data-reveal-delay="200">
+        <p>Filtrar por categoria</p>
+        <div id="products-category-chips" class="chip-row"></div>
+      </section>
+
+      <section class="products-list-section" data-reveal data-reveal-delay="280">
+        <p id="products-status" class="status-line">Carregando catálogo...</p>
+        <div id="products-grid" class="product-grid"></div>
+
+        <div class="products-pagination">
+          <button id="products-prev" type="button" class="btn-ghost">Anterior</button>
+          <p id="products-page-label">Página 1 de 1</p>
+          <button id="products-next" type="button" class="btn-ghost">Próxima</button>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/pages/products.js"></script>
+  </body>
+</html>
