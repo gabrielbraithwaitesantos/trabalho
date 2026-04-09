@@ -77,7 +77,7 @@ Tambem sao aceitos os nomes:
 Quando a colecao `products` estiver vazia (ou sem acesso), a aplicacao usa um catalogo local de fallback para nao quebrar a tela.
 
 ## Login e carrinho
-
+oi
 - O login agora usa Firebase Authentication (e-mail/senha) de forma real.
 - A tela de login permite entrar ou criar conta diretamente.
 - A tela de login tambem suporta "Entrar com Google".
