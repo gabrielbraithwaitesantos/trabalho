@@ -1,5 +1,5 @@
 # Duda's Lingerie - E-commerce com Firebase
-
+oi
 Projeto web de e-commerce de lingerie em JavaScript usando:
 
 - Vite (dev server e build)
